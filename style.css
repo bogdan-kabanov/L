@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 0; /* Убрано внутреннее отступание */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0; /* Добавлены отступы сверху и снизу */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Увеличена высота меню */
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav ul li {
+    margin-right: 20px; /* Добавлены отступы между ссылками */
+}
+
+.nav ul li:last-child {
+    margin-right: 0; /* Убран отступ у последней ссылки */
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    line-height: 80px; /* Выравнивание текста по высоте */
+}
+
+.nav ul li a:hover {
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+    position: relative; /* Убрана фиксация футера */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        width: 80px;
+        display: block;
+    }
+    .nav {
+        display: none;
+        position: absolute;
+        top: 80px; /* Увеличена высота для выпадающего меню */
+        right: 0; /* Меню прижато к правому краю */
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px; /* Установлена фиксированная ширина */
+    }
+    .nav ul {
+        flex-direction: column;
+    }
+    .nav ul li {
+        margin-bottom: 10px;
+        margin-right: 0; /* Убраны горизонтальные отступы на мобильных */
+    }
+    .nav.show {
+        display: block;
+    }
+    .header-container {
+        flex-direction: row; /* Меню остается в ряд */
+        align-items: center;
+        justify-content: space-between; /* Логотип и бургер-меню по краям */
+    }
+    body {
+        overflow-x: hidden; /* Убран скролл по горизонтали */
+    }
+}
